@@ -17,3 +17,6 @@ def create_app(test_config=None):
 
     # ensure the instance folder exists if it doesn't
     os.makedirs(app.instance_path, exist_ok=True)
+
+    from . import db #imports the db file
+        db.init_app(app)
