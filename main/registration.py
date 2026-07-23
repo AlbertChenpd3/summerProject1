@@ -1,0 +1,17 @@
+#this file handles all the work of creating rooms and registering rooms to computers
+
+import functools
+
+from flask import ( Blueprint, flash, g, redirect, render_template, request, session, url_for)
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from flaskr.db import get_db
+
+bp = Blueprint('register', __name__, url_prefix='/register')
+
+
+@bp.route('/register',methods=('GET','POST'))
+def registerRoom():
+    if request.method == POST:
+        roomName = request.form['username']
+    return #have to return a template here

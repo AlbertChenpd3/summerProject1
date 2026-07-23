@@ -6,3 +6,5 @@ A summer project for freshman year where I attempt to track the status of a comp
 # Hopeful future functionality
 -The ability to create 'rooms' or clusters of computers registered to a room, whereby visiting the url of a certain room, a user can view the status of all computers within a room
 -Unit tests?
+# Notes
+-Preferrably while a computer's on, every 30 seconds or so it would update its status on the website
