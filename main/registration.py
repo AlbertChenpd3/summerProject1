@@ -10,8 +10,14 @@ from flaskr.db import get_db
 bp = Blueprint('register', __name__, url_prefix='/register')
 
 
-@bp.route('/register',methods=('GET','POST'))
+@bp.route('/registerRoom<roomName>',methods=('GET','POST'))
 def registerRoom():
     if request.method == POST:
         roomName = request.form['username']
     return #have to return a template here
+
+@bp.route('/registerComputerToRoom<computer#>',methods=('POST'))
+def registerComputerToRoom():
+    db = get_db()
+
+    return
