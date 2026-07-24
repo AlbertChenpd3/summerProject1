@@ -9,6 +9,8 @@ CREATE TABLE roomList(
 );
 
 CREATE TABLE individualRooms(
-    roomHash INTEGER PRIMARY KEY --should link to roomList room Hash, also should be the row not the column
+    currentRoomHash INTEGER PRIMARY KEY --should link to roomList room Hash, also should be the row not the column 
     --need to store multiple values here somehow
+    FOREIGN KEY (currentRoomHash) REFERENCES roomList(roomHash)
+
 );
