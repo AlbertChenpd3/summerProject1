@@ -16,9 +16,9 @@ def registerRoom():
     if request.method == 'POST':
         roomName = request.form['roomName']
         #if not unique have an error
-        roomHash = generate_password_hash
-        db.execute('INSERT INTO roomList (roomName,roomHash) VALUES (?,?)' (roomName,roomHash))
-        db.execute('INSERT INTO individualRooms (currentRoomHash) VALUES (?)',roomHash)  #placeholder)
+        roomHash = generate_password_hash() #str? maybe that's the cause of this issue
+        db.execute("INSERT INTO roomList (roomName,roomHash) VALUES (?,?)" (roomName,roomHash))
+        db.execute("INSERT INTO individualRooms (currentRoomHash) VALUES (?)",(roomHash))  #placeholder)
         db.commit()
     return #have to return a template here
 
