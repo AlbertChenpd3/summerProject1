@@ -12,12 +12,19 @@ bp = Blueprint('register', __name__, url_prefix='/register')
 
 @bp.route('/registerRoom<roomName>',methods=('GET','POST'))
 def registerRoom():
-    if request.method == POST:
-        roomName = request.form['username']
+    db = get_db()
+    if request.method == 'POST':
+        roomName = request.form['roomName']
+        #if not unique have an error
+        roomHash = generate_password_hash
+        db.execute('INSERT INTO roomList (roomName,roomHash) VALUES (?,?)' (roomName,roomHash))
+        db.execute('INSERT INTO individualRooms (currentRoomHash) VALUES (?)',roomHash)  #placeholder)
+        db.commit()
     return #have to return a template here
 
 @bp.route('/registerComputerToRoom<computer#>',methods=('POST'))
 def registerComputerToRoom():
     db = get_db()
+
 
     return
