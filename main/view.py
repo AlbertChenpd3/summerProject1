@@ -9,6 +9,6 @@ bp = Blueprint('view', __name__, url_prefix='/view')
 @bp.route('/view/<roomHash>',__name__,methods=['GET'])
 def view(roomHash):
     db = get_db()
-    status = db.execute(SELECT * FROM individualRooms)
+    status = db.execute(SELECT * FROM individualRooms).fetchall()
 
-    return roomHash #should return the html template
+    return render_template('view/view.html',status=status) #should return the html template

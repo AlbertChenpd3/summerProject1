@@ -2,6 +2,13 @@
 DROP TABLE IF EXISTS roomList;
 DROP TABLE IF EXISTS individualRooms;
 
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+
 CREATE TABLE roomList(
     roomName varchar(255) PRIMARY KEY, --ensures unique names
     roomHash INTEGER PRIMARY KEY AUTOINCREMENT --linked to each hash, should generate a unique one for each room
