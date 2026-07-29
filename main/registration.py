@@ -10,7 +10,7 @@ from main.db import get_db
 bp = Blueprint('register', __name__, url_prefix='/register')
 
 
-@bp.route('/registerRoom<roomName>',methods=('GET','POST'))
+@bp.route('/registerRoom<roomName>',methods=['GET','POST'])
 def registerRoom():
     db = get_db()
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def registerRoom():
         db.commit()
     return #have to return a template here
 
-@bp.route('/registerComputerToRoom<computer#>',methods=('POST'))
+@bp.route('/registerComputerToRoom<compNumber>',methods=['POST'])
 def registerComputerToRoom():
     db = get_db()
 

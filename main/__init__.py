@@ -24,3 +24,5 @@ def create_app(test_config=None):
 
     from . import db #imports the db file
     db.init_app(app)
+
+    return app

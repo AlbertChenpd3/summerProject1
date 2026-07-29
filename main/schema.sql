@@ -11,7 +11,7 @@ CREATE TABLE user (
 
 CREATE TABLE roomList(
     roomName varchar(255) PRIMARY KEY, --ensures unique names
-    roomHash INTEGER PRIMARY KEY AUTOINCREMENT --linked to each hash, should generate a unique one for each room
+    roomHash INTEGER  AUTOINCREMENT --linked to each hash, should generate a unique one for each room
 
 );
 
